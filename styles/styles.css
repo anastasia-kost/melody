@@ -65,3 +65,12 @@ body {
   margin: auto;
   padding-top: 54px;
 }
+
+.home-image path {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.home-image path:hover {
+  opacity: 1;
+}
