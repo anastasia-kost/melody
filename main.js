@@ -3,11 +3,26 @@ $(document).ready(function () {
   const homePath = $(".home-image path");
   const counterUp = $(".counter-up");
   const counterDown = $(".counter-down");
+  const modal = $(".modal");
+  const modalCloseButton = $(".modal-close-button");
+  const flatsButton = $(".button-primary");
+
+  function toggleModal() {
+    modal.toggleClass("is-open");
+  }
+
+  homePath.on("click", toggleModal);
+
+  modalCloseButton.on("click", toggleModal);
+
+  flatsButton.on("click", toggleModal);
+
   homePath.on("mouseover", function () {
     currentFloor = $(this).attr("data-floor");
     homePath.removeClass("current-floor");
     $(".counter").text(currentFloor);
   });
+
   counterUp.on("click", function () {
     if (currentFloor < 18) {
       currentFloor++;
