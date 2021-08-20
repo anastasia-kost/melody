@@ -114,7 +114,7 @@ path.current-floor {
   align-items: center;
 }
 
-.counter {
+.floor-counter {
   font-family: "Bebas Neue", sans-serif;
   color: #635854;
   font-size: 124px;
@@ -167,6 +167,15 @@ path.current-floor {
   min-height: 565px;
   background-color: #fff;
   flex-grow: 1;
+  transform: translateY(-10%);
+  transition: transform 0.2s, opacity 0.2s;
+  transition-delay: 0.2s;
+  opacity: 0;
+}
+
+.is-open > .modal-dialog {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .modal-image {
@@ -188,6 +197,15 @@ path.current-floor {
 .modal-info {
   width: 40%;
   padding: 50px 46px;
+}
+
+.flats path {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.flats path:hover {
+  opacity: 1;
 }
 
 .flat-list {
